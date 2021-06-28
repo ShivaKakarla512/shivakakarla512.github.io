@@ -255,11 +255,11 @@ main.addEventListener('mouseup', function() {
 });
 
 /*==================== GSAP ANIMATION ======================*/ 
-TweenMax.to('.main', 3, {
+TweenMax.to('.nav__logo, .nav__item, .nav__moon, .home__title, .home__subtitle, .home__description, .home__button, .home__img, .home__social-icon, .home__scroll, .home__note, .section__title, .section__subtitle', 0, {
     autoAlpha: 1
 });
 
-TweenMax.to('.nav__logo, .nav__item, .nav__moon, .home__title, .home__subtitle, .home__description, .home__button, .home__img, .home__social-icon, .home__scroll, .home__note, .section__title, .section__subtitle', 0, {
+TweenMax.to('.main', 3, {
     autoAlpha: 1
 });
 
