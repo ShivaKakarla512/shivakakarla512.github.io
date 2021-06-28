@@ -242,7 +242,9 @@ main.addEventListener('mousedown', function() {
     if(mouseIsDown) {
         // mouse was held down for > 2 seconds
         let num = random(colors, getComputedStyle(document.documentElement).getPropertyValue('--hue-color'))
+        // TweenMax.set('.main', {autoAlpha: 0});
         document.documentElement.style.setProperty('--bg-url', `url(../img/bg${num}.png)`);
+        // TweenMax.to('.main', 1, {autoAlpha: 1});
         document.documentElement.style.setProperty('--hue-color', num);
     }
   }, 1200);
@@ -253,6 +255,14 @@ main.addEventListener('mouseup', function() {
 });
 
 /*==================== GSAP ANIMATION ======================*/ 
+TweenMax.to('.main', 3, {
+    autoAlpha: 1
+});
+
+TweenMax.to('.nav__logo, .nav__item, .nav__moon, .home__title, .home__subtitle, .home__description, .home__button, .home__img, .home__social-icon, .home__scroll, .home__note, .section__title, .section__subtitle', 0, {
+    autoAlpha: 1
+});
+
 // NAV
 gsap.from('.nav__logo', {opacity: 0, duration: 1, delay:1, y: 20})
 gsap.from('.nav__item, .nav__moon', {opacity: 0, duration: 1, delay: 1, y: 20, stagger: 0.2})
@@ -270,11 +280,3 @@ gsap.from('.home__note', {opacity: 0, duration: 1, delay:2.4, y: -30})
 
 gsap.from('.section__title', {opacity: 0, duration: 1, delay:2.8, y: -30})
 gsap.from('.section__subtitle', {opacity: 0, duration: 1, delay:3.0, y: -30})
-
-TweenMax.to('.main', 3, {
-    autoAlpha: 1
-});
-
-TweenMax.to('.nav__logo, .nav__item, .nav__moon, .home__title, .home__subtitle, .home__description, .home__button, .home__img, .home__social-icon, .home__scroll, .home__note, .section__title, .section__subtitle', 1, {
-    autoAlpha: 1
-});
