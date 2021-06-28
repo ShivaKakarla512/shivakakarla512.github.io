@@ -382,6 +382,15 @@ img {
 }
 
 /*==================== BUTTONS ====================*/
+button {
+    text-decoration: none;
+    font-family: var(--body-font);
+    border-width: 0px;
+    background: transparent;
+    cursor: pointer;
+    font-size: var(--normal-font-size);
+}
+
 .button {
     display: inline-block;
     background-color: var(--first-color);
