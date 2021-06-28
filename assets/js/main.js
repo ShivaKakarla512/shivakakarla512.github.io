@@ -262,7 +262,7 @@ gsap.from('.home__title', {opacity: 0, duration: 1, delay:1.6, y: 30})
 gsap.from('.home__subtitle', {opacity: 0, duration: 1, delay:1.7, y: 30})
 gsap.from('.home__description', {opacity: 0, duration: 1, delay:1.8, y: 30})
 gsap.from('.home__button', {opacity: 0, duration: 1, delay:2.1, y: 30})
-// gsap.from('.home__img', {opacity: 0, duration: 1, delay:1.3, y: 30})
+gsap.from('.home__img', {opacity: 0, duration: 1, delay:1.3, y: 30})
 
 gsap.from('.home__social-icon', {opacity: 0, duration: 1, delay:2, x: -30, stagger: 0.2})
 gsap.from('.home__scroll', {opacity: 0, duration: 1, delay:2.2, y: -30})
@@ -271,10 +271,10 @@ gsap.from('.home__note', {opacity: 0, duration: 1, delay:2.4, y: -30})
 gsap.from('.section__title', {opacity: 0, duration: 1, delay:2.8, y: -30})
 gsap.from('.section__subtitle', {opacity: 0, duration: 1, delay:3.0, y: -30})
 
-// TweenMax.set('.main', {
-//     autoAlpha: 0
-// });
+TweenMax.to('.main', 3, {
+    autoAlpha: 1
+});
 
-// TweenMax.to('.main', 3, {
-//     autoAlpha: 1
-// });
+TweenMax.to('.nav__logo, .nav__item, .nav__moon, .home__title, .home__subtitle, .home__description, .home__button, .home__img, .home__social-icon, .home__scroll, .home__note, .section__title, .section__subtitle', 1, {
+    autoAlpha: 1
+});

@@ -201,6 +201,10 @@ img {
     align-items: center;
 }
 
+.nav__logo, .nav__item, .nav__moon {
+    visibility: hidden;
+}
+
 .nav__logo, .nav__toggle {
     color: var(--title-color);
     font-weight: var(--font-medium);
@@ -287,6 +291,19 @@ img {
 /*==================== HOME ====================*/
 .home__container {
     gap: 1rem;
+}
+
+.home__title,
+.home__subtitle,
+.home__description,
+.home__button,
+.home__img,
+.home__social-icon,
+.home__scroll,
+.home__note,
+.section__title,
+.section__subtitle {
+    visibility: hidden;
 }
 
 .home__content {
@@ -1335,6 +1352,7 @@ button {
 /* For large devices */
 @media screen and (min-width: 1024px) {
     .main {
+        visibility: hidden;
         background-image: var(--bg-url);
         background-repeat: repeat-y;
         background-size: contain;   
