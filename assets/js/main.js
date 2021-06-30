@@ -96,44 +96,6 @@ modalCloses.forEach((modalClose) => {
     })
 })
 
-/*==================== PORTFOLIO SWIPER  ====================*/
-let swiperPortfolio = new Swiper(".portfolio__container", {
-    cssMode: true,
-    loop: true,
-    mousewheel: {
-        // invert: true,
-    },
-
-    navigation: {
-      nextEl: ".swiper-button-next",
-      prevEl: ".swiper-button-prev",
-    },
-    
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-    },
-});
-
-/*==================== TESTIMONIAL ====================*/
-let swiperTestimonial = new Swiper(".testimonial__container", {
-    loop: true,
-    grabCursor: true,
-    spaceBetween: 48,
-
-    pagination: {
-      el: ".swiper-pagination",
-      clickable: true,
-      dynamicBullets: true,
-    },
-
-    breakpoints: {
-        768: {
-            slidesPerView: 2,
-        }
-    }
-});
-
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
@@ -217,42 +179,47 @@ const random = (list, current) => {
 }
 
 const main = document.getElementById('main');
-let mouseIsDown = false;
-let touchIsDown = false;
 
-main.addEventListener('touchstart', function() {
-    touchIsDown = true;
-    setTimeout(function() {
-      if(touchIsDown) {
-          // mouse was held down for > 2 seconds
-          let num = random(colors, getComputedStyle(document.documentElement).getPropertyValue('--hue-color'))
-          document.documentElement.style.setProperty('--bg-url', `url(../img/bg${num}.png)`);
-          document.documentElement.style.setProperty('--hue-color', num);
-      }
-    }, 1200);
-  });
+main.addEventListener('dblclick', function () {
+    let num = random(colors, getComputedStyle(document.documentElement).getPropertyValue('--hue-color'))
+           document.documentElement.style.setProperty('--bg-url', `url(../img/bg${num}.png)`);
+           document.documentElement.style.setProperty('--hue-color', num);
+})
+
+// let mouseIsDown = false;
+// let touchIsDown = false;
+
+// main.addEventListener('touchstart', function() {
+//     touchIsDown = true;
+//     setTimeout(function() {
+//       if(touchIsDown) {
+//           // mouse was held down for > 2 seconds
+//           let num = random(colors, getComputedStyle(document.documentElement).getPropertyValue('--hue-color'))
+//           document.documentElement.style.setProperty('--bg-url', `url(../img/bg${num}.png)`);
+//           document.documentElement.style.setProperty('--hue-color', num);
+//       }
+//     }, 2000);
+//   });
   
-  main.addEventListener('touchend', function() {
-    touchIsDown = false;
-  });
+//   main.addEventListener('touchend', function() {
+//     touchIsDown = false;
+//   });
 
-main.addEventListener('mousedown', function() {
-  mouseIsDown = true;
-  setTimeout(function() {
-    if(mouseIsDown) {
-        // mouse was held down for > 2 seconds
-        let num = random(colors, getComputedStyle(document.documentElement).getPropertyValue('--hue-color'))
-        // TweenMax.set('.main', {autoAlpha: 0});
-        document.documentElement.style.setProperty('--bg-url', `url(../img/bg${num}.png)`);
-        // TweenMax.to('.main', 1, {autoAlpha: 1});
-        document.documentElement.style.setProperty('--hue-color', num);
-    }
-  }, 1200);
-});
+// main.addEventListener('mousedown', function() {
+//   mouseIsDown = true;
+//   setTimeout(function() {
+//     if(mouseIsDown) {
+//         // mouse was held down for > 2 seconds
+//         let num = random(colors, getComputedStyle(document.documentElement).getPropertyValue('--hue-color'))
+//         document.documentElement.style.setProperty('--bg-url', `url(../img/bg${num}.png)`);
+//         document.documentElement.style.setProperty('--hue-color', num);
+//     }
+//   }, 1200);
+// });
 
-main.addEventListener('mouseup', function() {
-  mouseIsDown = false;
-});
+// main.addEventListener('mouseup', function() {
+//   mouseIsDown = false;
+// });
 
 /*==================== GSAP ANIMATION ======================*/ 
 TweenMax.to('.nav__logo, .nav__item, .nav__moon, .home__title, .home__subtitle, .home__description, .home__button, .home__img, .home__social-icon, .home__scroll, .home__note, .section__title, .section__subtitle', 0, {
@@ -264,19 +231,19 @@ TweenMax.to('.main', 3, {
 });
 
 // NAV
-gsap.from('.nav__logo', {opacity: 0, duration: 1, delay:1, y: 20})
-gsap.from('.nav__item, .nav__moon', {opacity: 0, duration: 1, delay: 1, y: 20, stagger: 0.2})
+// gsap.from('.nav__logo', {opacity: 0, duration: 1, delay:1, y: 20})
+// gsap.from('.nav__item, .nav__moon', {opacity: 0, duration: 1, delay: 1, y: 20, stagger: 0.2})
 
 // HOME
-gsap.from('.home__title', {opacity: 0, duration: 1, delay:1.6, y: 30})
-gsap.from('.home__subtitle', {opacity: 0, duration: 1, delay:1.7, y: 30})
-gsap.from('.home__description', {opacity: 0, duration: 1, delay:1.8, y: 30})
-gsap.from('.home__button', {opacity: 0, duration: 1, delay:2.1, y: 30})
-gsap.from('.home__img', {opacity: 0, duration: 1, delay:1.3, y: 30})
+// gsap.from('.home__title', {opacity: 0, duration: 1, delay:1.6, y: 30})
+// gsap.from('.home__subtitle', {opacity: 0, duration: 1, delay:1.7, y: 30})
+// gsap.from('.home__description', {opacity: 0, duration: 1, delay:1.8, y: 30})
+// gsap.from('.home__button', {opacity: 0, duration: 1, delay:2.1, y: 30})
+// gsap.from('.home__img', {opacity: 0, duration: 1, delay:1.3, y: 30})
 
-gsap.from('.home__social-icon', {opacity: 0, duration: 1, delay:2, x: -30, stagger: 0.2})
-gsap.from('.home__scroll', {opacity: 0, duration: 1, delay:2.2, y: -30})
-gsap.from('.home__note', {opacity: 0, duration: 1, delay:2.4, y: -30})
+// gsap.from('.home__social-icon', {opacity: 0, duration: 1, delay:2, x: -30, stagger: 0.2})
+// gsap.from('.home__scroll', {opacity: 0, duration: 1, delay:2.2, y: -30})
+// gsap.from('.home__note', {opacity: 0, duration: 1, delay:2.4, y: -30})
 
-gsap.from('.section__title', {opacity: 0, duration: 1, delay:2.8, y: -30})
-gsap.from('.section__subtitle', {opacity: 0, duration: 1, delay:3.0, y: -30})
+// gsap.from('.section__title', {opacity: 0, duration: 1, delay:2.8, y: -30})
+// gsap.from('.section__subtitle', {opacity: 0, duration: 1, delay:3.0, y: -30})

@@ -141,7 +141,6 @@ img {
     max-width: 100%;
     height: auto;
 }
-
 /*==================== REUSABLE CSS CLASSES ====================*/
 .section {
     padding: 2rem 0 4rem;
@@ -343,17 +342,27 @@ img {
 
 .home__title {
     font-size: var(--big-font-size);
+    color: var(--title-color);
+}
+
+.home__title span {
+    color: var(--first-color);
 }
 
 .home__subtitle {
     font-size: var(--h3-font-size);
-    color: var(--text-color);
+    color: var(--title-color);
     font-weight: var(--font-medium);
     margin-bottom: var(--mb-0-75);
 }
 
 .home__description {
-    margin-bottom: var(--mb-2);
+    margin-bottom: var(--mb-1);
+}
+
+.home__subtitle span, .home__description span {
+    font-weight: bold;
+    color: var(--first-color);
 }
 
 .home__scroll-button {
@@ -469,6 +478,11 @@ button {
     margin-bottom: var(--mb-2-5);
 }
 
+.about__description span {
+    font-weight: bold;
+    color: var(--first-color);
+}
+
 .about__info {
     display: flex;
     justify-content: space-evenly;
@@ -563,37 +577,62 @@ button {
 .skills__html {
     width: 90%;
 }
-.skills__css {
-    width: 80%;
+.skills__java {
+    width: 75%;
 }
 .skills__js {
-    width: 60%;
+    width: 80%;
 }
+.skills__python {
+    width: 85%;
+}
+.skills__r {
+    width: 70%;
+}
+
 .skills__react {
     width: 85%;
 }
-
-.skills__php {
+.skills__vue {
     width: 80%;
 }
-.skills__node {
+.skills__angular {
+    width: 70%;
+}
+.skills__jquery {
+    width: 75%;
+}
+.skills__native {
+    width: 90%;
+}
+
+.skills__flask {
+    width: 85%;
+}
+.skills__django {
+    width: 80%;
+}
+.skills__nodejs {
     width: 70%;
 }
 .skills__firebase {
-    width: 90%;
+    width: 60%;
 }
-.skills__python {
-    width: 55%;
+.skills__sql {
+    width: 75%;
 }
 
 .skills__figma {
-    width: 90%;
+    width: 80%;
 }
-.skills__sketch {
+.skills__framer {
     width: 85%;
 }
 .skills__photoshop {
-    width: 85%;
+    width: 55%;
+}
+.skills__illustrator {
+    width: 65%;
 }
 
 .skills__close .skills__list {
@@ -760,6 +799,10 @@ button {
     display: flex;
 }
 
+.services__modal-service p span {
+    font-weight: bold;
+}
+
 .services__modal-title {
     font-size: var(--h3-font-size);
     font-weight: var(--font-medium);
@@ -873,45 +916,6 @@ button {
 
 .project__data {
     margin-bottom: var(--mb-3);
-}
-
-/*==================== TESTIMONIAL ====================*/
-.testimonial__data, .testimonial__header {
-    display: flex;
-}
-
-.testimonial__data {
-    justify-content: space-between;
-    margin-bottom: var(--mb-1);
-}
-
-.testimonial__img {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    margin-right: var(--mb-0-75);
-}
-
-.testimonial__name {
-    font-size: var(--h3-font-size);
-    font-weight: var(--font-medium);
-}
-
-.testimonial__client {
-    font-size: var(--small-font-size);
-    color: var(--text-color-light);
-}
-
-.testimonial__description {
-    margin-bottom: var(--mb-2-5);
-}
-
-.testimonial__icon-star {
-    color: var(--first-color)
-}
-
-.swiper-container .swiper-pagination-testimonial {
-    bottom: 0;
 }
 
 /*==================== CONTACT ME ====================*/
@@ -1101,18 +1105,6 @@ button {
     .project__img {
         width: 200px;
     }
-
-    .testimonial__data, .testimonial__header {
-        flex-direction: column;
-        align-items: center;
-    }
-    .testimonial__img {
-        margin-right: 0;
-        margin-bottom: var(--mb-0-25);
-    }
-    .testimonial__data, .testimonial__description {
-        text-align: center;
-    }
 }
 
 /* For medium devices */
@@ -1155,11 +1147,6 @@ button {
         display: grid;
         grid-template-columns: 1fr;
         justify-content: center;
-    }
-
-    .testimonial__container {
-        margin-left: var(--mb-3);
-        margin-right: var(--mb-3);
     }
 
     .footer__container {
@@ -1286,7 +1273,7 @@ button {
     }
 
     .services__container {
-        grid-template-columns: repeat(3, 218px);
+        grid-template-columns: repeat(2, 300px);
         justify-content: center;
     }
     .services__icon {
@@ -1468,13 +1455,17 @@ button {
         font-size: var(--h2-font-size);
     }
     .services__modal-icon {
-        font-size: 1.5rem;
+        font-size: 1.25rem;
     }
     .services__modal-close {
         font-size: 1.5rem;
     }
     .services__modal-content {
         font-size: var(--h3-font-size);
+    }
+    .services__container {
+        grid-template-columns: repeat(2, 320px);
+        justify-content: center;
     }
 
     .portfolio__content {
@@ -1503,10 +1494,6 @@ button {
     }
 
     .project__description {
-        font-size: 1.1rem;
-    }
-
-    .testimonial__description {
         font-size: 1.1rem;
     }
 
