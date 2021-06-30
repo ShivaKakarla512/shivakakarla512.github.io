@@ -103,9 +103,8 @@ const mixer = mixitup('.portfolio__container', {
     },
     animation: {
         duration: 500,
-        // nudge: false,
-        // reverseOut: false,
-        // effects: "fade scale(0.41)"
+        animateResizeContainer: false,
+        animateResizeTargets: false,
     },
 });
 

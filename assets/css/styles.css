@@ -832,8 +832,6 @@ button {
 
 /*==================== PORTFOLIO ====================*/
 .portfolio__container {
-    /* border: #000 2px solid; */
-    display: grid;
     gap: 1rem;
 }
 
