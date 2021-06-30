@@ -96,6 +96,29 @@ modalCloses.forEach((modalClose) => {
     })
 })
 
+/*==================== Projects MIXUP ===============================*/
+const mixer = mixitup('.portfolio__container', {
+    selectors: {
+        target: '.portfolio__content'
+    },
+    animation: {
+        duration: 500,
+        // nudge: false,
+        // reverseOut: false,
+        // effects: "fade scale(0.41)"
+    },
+});
+
+const linkPortfolio = document.querySelectorAll('.portfolio__item')
+
+function activePortfolio() {
+    if (linkPortfolio) {
+        linkPortfolio.forEach(l => l.classList.remove('active-portfolio'))
+        this.classList.add('active-portfolio')
+    }
+}
+linkPortfolio.forEach(l => l.addEventListener('click', activePortfolio))
+
 /*==================== SCROLL SECTIONS ACTIVE LINK ====================*/
 const sections = document.querySelectorAll('section[id]')
 
